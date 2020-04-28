@@ -4,7 +4,8 @@ function result = evaluation(stations, solution)
     noSelec = 1:N;
     noSelec(solution) = [];
     
-    euclideanDistances = pdist2(N(noSelec),N(solution));
+    
+    euclideanDistances = pdist2(stations(noSelec,:),stations(solution,:));
     
     minDistances = min(euclideanDistances,[],2);
     
